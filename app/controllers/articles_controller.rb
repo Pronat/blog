@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 		@article = Article.new(article_params)
 		if@article.valid?
 			@article.save  #если валидация true, то возвращаем app/views/article/create.html.erb
+			redirect_to @articles
 		else
 			render action: 'new'	#запускаем метод def new (action)
 		end
